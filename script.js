@@ -1,4 +1,21 @@
 const themeToggle = document.getElementById("themeToggle");
+const menuToggle = document.getElementById("menuToggle");
+const navLinksEl = document.getElementById("navLinks");
+
+if (menuToggle && navLinksEl) {
+    menuToggle.addEventListener("click", () => {
+        const isOpen = navLinksEl.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Close the mobile menu whenever a nav link is tapped
+    navLinksEl.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+            navLinksEl.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+}
 
 // Apply saved theme on load (defaults to light if none saved)
 const savedTheme = localStorage.getItem("theme");
