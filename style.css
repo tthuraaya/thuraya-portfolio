@@ -204,7 +204,7 @@ body.dark .moon-icon {
     flex-shrink: 0;
 }
 
-/* Contact card icons (email / phone / location — replaces the old emojis) */
+/* Contact card icons (email / phone / location â€” replaces the old emojis) */
 .contact-icon-img {
     width: 24px;
     height: 24px;
@@ -951,5 +951,110 @@ footer p {
     }
     .intro-stats {
         gap: 14px;
+    }
+}
+
+/* ===================================================
+   Responsive Improvements (Added)
+=================================================== */
+
+.introduction h1{
+    font-size: clamp(2rem, 5vw, 3.6rem);
+}
+
+.intro-bio{
+    font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+section h2{
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+@media (max-width:1024px){
+    .introduction{
+        gap:32px;
+    }
+
+    .introduction h1{
+        font-size:clamp(2.4rem,4vw,3rem);
+    }
+
+    .intro-avatar img{
+        width:240px;
+        height:240px;
+    }
+}
+
+@media (max-width:768px){
+
+    section{
+        padding:60px 20px;
+    }
+
+    .introduction{
+        padding:32px 20px;
+        gap:20px;
+    }
+
+    .intro-avatar img{
+        width:min(42vw,180px);
+        height:min(42vw,180px);
+    }
+
+    .intro-stats{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:12px;
+        width:100%;
+    }
+
+    .stat-item{
+        align-items:center;
+    }
+
+    .stat-number{
+        font-size:1.5rem;
+    }
+
+    .stat-label{
+        font-size:.7rem;
+        white-space:normal;
+        text-align:center;
+    }
+
+    .intro-actions{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        width:100%;
+        gap:12px;
+    }
+
+    .intro-actions .btn{
+        width:100%;
+        min-width:0;
+    }
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .certs-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (max-width:420px){
+
+    .introduction h1{
+        font-size:1.8rem;
+    }
+
+    .intro-avatar img{
+        width:140px;
+        height:140px;
     }
 }
